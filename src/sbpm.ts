@@ -1,68 +1,75 @@
 import { io, Socket } from "socket.io-client";
 import { socketManager } from "./services/sockets/main";
 
-console.log("OKaaay lets go sbpm.ts");
+console.log("OKaaay lets go sbpm.ts yigha");
 const BATCH_SIZE = 10; // adjust this to the desired batch size
 
-const linksToSend: Song[] = [];
-
-const querySelectors = [".trackItem__trackTitle"];
+const trackItems = [];
 
 const getCompactTracklistItems = () => {
-  const trackItems = document.querySelectorAll(".compactTrackList__item");
-  console.log("trackItems", trackItems);
-
-  trackItems.forEach((item) => {
-    const trackTitleElement = item.querySelector(".compactTrackListItem__trackTitle");
-    console.log("Track Title: ", trackTitleElement);
-
-    const linkPath = trackTitleElement.getAttribute('data-permalink-path');
-    console.log("Permalink Path: ", linkPath);
-  })
-};
-
-getCompactTracklistItems();
-
-
-
-const observer = new MutationObserver(async () => {
-  console.log("HALOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOQ!!!");
-
-  getCompactTracklistItems()
-
-  const sideItems = document.querySelectorAll("a.soundTitle__title");
-  // sideItems.forEach((sideItem) => {
-  //   console.log("sideItem", sideItem.href);
-  // });
-
-  const tracktItems = document.querySelectorAll(".trackItem__trackTitle");
-
-  const linkElements = document.querySelectorAll(".soundTitle__title");
-  console.error("linkElements: ", linkElements);
-
-  for (var i = 0; i < linkElements.length; i++) {
-    const song = linkElements[i].getAttribute("href");
-    linksToSend.push();
+  const trackList = document.querySelectorAll(
+    ".compactTrackList__listContainer"
+  );
+  if (!trackList) {
+    console.log("No compact tracklist is found");
+    return;
   }
 
-  Array.from(tracktItems).forEach(async (element) => {
-    const link = element.getAttribute("href");
-    console.log(link);
-    const parsedLink: any = { url: link.split("?")[0] };
+  trackList.forEach((list) => {
+    const trackItems = list.querySelectorAll(".compactTrackList__item");
+    console.log("trackItems", trackItems);
 
-    console.log(parsedLink);
+    trackItems.forEach((item) => {
+      const trackTitleElement = item.querySelector(
+        ".compactTrackListItem__trackTitle"
+      );
+      const trackTitle = trackTitleElement.innerHTML.replace("-", "").trim().replace('&amp;', '&');
+      console.log("Track Title: ", trackTitle);
 
-    // Ensure the link is a valid SoundCloud link before adding to the list
-    if (parsedLink && !linksToSend.includes(parsedLink)) {
-      console.log("allooooo");
-      console.log(`pushed ${parsedLink}`);
-      linksToSend.push(parsedLink);
+      const trackUrlPath = trackTitleElement.getAttribute("data-permalink-path");
+      console.log("Permalink Path: ", trackUrlPath);
+    });
+  });
+};
 
-      // If we have enough links for a batch, send them
-    }
+const getPlaylistTracklistItems = () => {
+  const trackList = document.querySelector(".trackList");
+  if (!trackList) {
+    console.log("No full playlist is found");
+    return;
+  }
+
+  const trackItems = trackList.querySelectorAll(".trackList__item");
+
+  console.log("Playlist track items:", trackItems);
+
+  trackItems.forEach((item) => {
+    const trackTitleElement = item.querySelector(".trackItem__trackTitle");
+
+    const trackUrlPath = trackTitleElement.getAttribute("href");
+    console.log("Track Path:", trackUrlPath);
+
+    const trackTitle = trackTitleElement.textContent.trim();
+    console.log("Track Title: ", trackTitle);
+
+    const userElement = item.querySelector(".trackItem__username");
+    const trackUser = trackTitleElement.textContent.trim();
+    console.log("Track User: ", trackUser);
+
+    const playCountElement = item.querySelector(".trackItem__playCount");
+    console.log("Playlist Track Play Count: ", playCountElement.textContent);
   });
 
-  console.log("linksToSend", linksToSend);
+  if (trackItems.length === 0) {
+    console.log("No Full Playlist is found");
+  } else {
+    console.log("Trackitems is not empty: ", trackItems.length);
+  }
+};
+
+const observer = new MutationObserver(async () => {
+  getCompactTracklistItems();
+  getPlaylistTracklistItems();
 });
 
 // Start observing the document with the configured parameters
