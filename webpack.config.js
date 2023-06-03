@@ -1,7 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/sbpm.ts',
+  entry: {
+    main: './src/sbpm.ts',
+    background: './src/background.ts',
+  },
   module: {
     rules: [
       {
@@ -15,7 +18,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
-    filename: 'sbpm.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
   mode: 'production',
