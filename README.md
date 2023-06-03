@@ -2,45 +2,20 @@
 
 You've just stumbled upon the *most exciting* open-source project on GitHub! Brace yourself for an extraordinary experience with the SoundCloud BPM Extension. This phenomenal Chrome extension, built with Node.js and TypeScript, is *the game-changer* for all DJs out there seeking to refine their song search on SoundCloud by BPM (Beats Per Minute) and Key. 🔥
 
-## 🚀 Version 0.1.0: Unleashing Power at Your Fingertips 🚀
+## 🎧 Revolutionizing Music Discovery: One Beat at a Time 🎧
 
-Get ready to tap into the power-packed features of our *thrilling* current version, 0.1.0, and stay tuned as we continually upgrade and expand the functionalities offered.
+We're not just any open-source project; we're here to *revolutionize* music discovery on SoundCloud! By allowing DJs to search songs based on their BPM and Key, we're setting new trends and transforming the conventional approach to music discovery. Elevate your music discovery journey with our Chrome extension designed for sheer productivity and the ultimate user-friendly experience.
 
 ## 💡 Request a Feature: Your Ideas Matter!
 
 We love hearing from our community, and your input can help shape the future of the SoundCloud BPM Extension! If you have a feature you'd love to see in our extension, here's how you can submit your idea:
 
-1. Head over to our GitHub repository's [Issues tab](https://github.com/<username>/soundcloud-bpm-extension/issues).
+1. Head over to our GitHub repository's [Issues tab](https://github.com/oxillix/soundcloud-bpm-extension/issues).
 2. Click on the "New Issue" button.
 3. Choose the "Feature request" template. If there isn't a specific template for feature requests, you can use the "Open a blank issue" option.
 4. Fill out the template with as many details as possible. The more we understand about what you want, the better we can help.
-
-### Feature Request Template
-
-To make it even easier, here's a template you can use when creating your feature request:
-
-```
-Title: [Feature Request] - Brief Description of Your Feature
-
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
-
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
-
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
-
-**Additional context**
-Add any other context or screenshots about the feature request here.
-```
-
+5. 
 Remember, the most effective feature requests are clear, concise, and include a rationale for adding the feature. We're excited to hear your ideas!
-
-
-## 🎧 Revolutionizing Music Discovery: One Beat at a Time 🎧
-
-We're not just any open-source project; we're here to *revolutionize* music discovery on SoundCloud! By allowing DJs to search songs based on their BPM and Key, we're setting new trends and transforming the conventional approach to music discovery. Elevate your music discovery journey with our Chrome extension designed for sheer productivity and the ultimate user-friendly experience.
 
 ## 📚 Installation Guide: Your First Step Towards Euphoria 📚
 
@@ -48,7 +23,7 @@ Kickstart your journey towards optimized music search by setting up our project 
 
 ```bash
 # Clone this exciting repository
-git clone https://github.com/<username>/soundcloud-bpm-extension.git
+git clone https://github.com/oxillix/soundcloud-bpm-extension.git
 
 # Navigate into your new adventure
 cd soundcloud-bpm-extension
