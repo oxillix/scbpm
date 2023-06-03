@@ -10,7 +10,7 @@ We're not just any open-source project; we're here to *revolutionize* music disc
 
 We love hearing from our community, and your input can help shape the future of the SoundCloud BPM Extension! If you have a feature you'd love to see in our extension, here's how you can submit your idea:
 
-1. Head over to our GitHub repository's [Issues tab](https://github.com/<username>/soundcloud-bpm-extension/issues).
+1. Head over to our GitHub repository's [Issues tab](https://github.com/oxillix/soundcloud-bpm-extension/issues).
 2. Click on the "New Issue" button.
 3. Choose the "Feature request" template. If there isn't a specific template for feature requests, you can use the "Open a blank issue" option.
 4. Fill out the template with as many details as possible. The more we understand about what you want, the better we can help.
@@ -23,7 +23,7 @@ Kickstart your journey towards optimized music search by setting up our project 
 
 ```bash
 # Clone this exciting repository
-git clone https://github.com/<username>/soundcloud-bpm-extension.git
+git clone https://github.com/oxillix/soundcloud-bpm-extension.git
 
 # Navigate into your new adventure
 cd soundcloud-bpm-extension
