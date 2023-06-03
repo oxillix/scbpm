@@ -1,0 +1,35 @@
+{
+  "name": "soundcloud-bpm-extension",
+  "version": "0.1.0",
+  "description": "Make it easier for DJ's to search for songs based on BPM and Key",
+  "main": "index.js",
+  "type": "commonjs",
+  "dependencies": {
+    "socket.io": "^4.6.1",
+    "socket.io-client": "^4.6.1",
+    "watch": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.2.4",
+    "@types/webpack": "^5.28.1",
+    "ts-loader": "^9.4.3",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.0.4",
+    "webpack": "^5.84.1",
+    "webpack-cli": "^5.1.1"
+  },
+  "scripts": {
+    "build:webpack": "webpack --config webpack.config.js",
+    "build": "npm run build:webpack && mkdir -p dist && cp -r src/html/ dist && cp src/manifest.json dist/ && cp -r src/assets dist/assets",
+    "watch": "tsc -w",
+    "watch:build": "watch 'npm run build' ./src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "soundcloud-bpm",
+    "chrome extension"
+  ],
+  "author": "Oxillix",
+  "license": "ISC"
+}
