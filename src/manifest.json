@@ -2,11 +2,11 @@
   "manifest_version": 3,
   "name": "SoundCloud BPM",
   "description": "Make it easier for DJ's to search for songs based on BPM and Key",
-  "version": "1.0",
+  "version": "0.1",
   "host_permissions": ["https://soundcloud.com/"],
 
   "action": {
-    "default_popup": "hello/popup.html",
+    "default_popup": "html/popup.html",
     "default_icon": {}
   },
   "background": {
