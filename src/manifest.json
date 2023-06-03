@@ -3,8 +3,7 @@
   "name": "SoundCloud BPM",
   "description": "Make it easier for DJ's to search for songs based on BPM and Key",
   "version": "0.1",
-  "host_permissions": ["https://soundcloud.com/"],
-
+  "host_permissions": ["https://soundcloud.com/", "https://scbpm.com/"],
   "action": {
     "default_popup": "html/popup.html",
     "default_icon": {}
@@ -12,18 +11,18 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": [
-    "http://scbpm.com/",
-    "ws://scbpm.com/",
-    "wss://scbpm.com/"
-  ],
   "content_security_policy": {
     "extension_pages": "script-src 'self'; object-src 'self'"
   },
-  "icons": { "16": "assets/icon-16.png", "48": "assets/icon-48.png", "128": "assets/icon-128.png" },
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
   "content_scripts": [
     {
       "matches": ["https://soundcloud.com/*"],
+      "css": ["assets/css/output.css"],
       "js": ["sbpm.js"]
     }
   ]
